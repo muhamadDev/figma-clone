@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/> <!-- 'nano' theme -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <div
+        class="container topBar flex justify-center items-center fixed top-0 w-[100%] h-[40px] z-[9] gap-4 bg-blue-200"
+    >
+        
+        <div data-swapy-slot="a">
+            
+            <div class="dropdown" data-swapy-item="dropdown">
+                <div tabindex="0" role="button" class="btn btn-sm m-1">add</div>
+                <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow objects">
+                    <li data-name="Rect">Rectangle</li>
+                    <li data-name="Circle">Circle</li>
+                    <li data-name="Triangle">Triangle</li>
+                </ul>
+            </div>
+            
+        </div>
+        
+        <div data-swapy-slot="b">
+            <button class="deleteBtn" data-swapy-item="deleteBtn">
+                <img src="./icons/delete.svg" alt="delele object btn">
+            </button>
+        </div>
+        
+        <div data-swapy-slot="c">
+            <button class="drawingMode" data-swapy-item="drawingMode">
+                <img src="./icons/brush.svg" alt="drawing mode btn">
+            </button>
+        </div>
+        
+        <div data-swapy-slot="d">
+            <button class="copy" data-swapy-item="copyBtn">
+                <img src="./icons/copy.svg" alt="copy object" >
+            </button>
+        </div>
+        
+        <div data-swapy-slot="e">
+            <button class="paste" data-swapy-item="pasteBtn">
+                <img src="./icons/paste.svg" alt="paste onject">
+            </button>
+        </div>
+        
+        <div data-swapy-slot="f">
+            <div data-swapy-item="colorPicker">
+                <div class="color-picker" ></div>
+            </div>
+        </div>
+        
+        <div class="sidebar">
+            
+            <input type="checkbox" id="openMenu" class="hidden">
+            
+            <label for="openMenu">
+                menu
+            </label>
+            
+            <!-- menu -->
+            <div class="leftMenu fixed top-[45px] bottom-0 right-0 w-[210px] bg-gray-100 rounded-md p-4 flex items-center flex-col gap-3">
+                
+                <div >
+                    <label for="radiusRange">rounded: </label>
+                    <input type="range" id="radiusRange" min="0" max="100" value="0" class="range radiusRange" />
+                </div>
+                
+                <div>
+                    <label for="opacityRange">opacity: </label>
+                    <input type="range" id="opacityRange" min="0" max="100" value="100" class="range opacityRange" />
+                </div>
+                
+                <div>
+                    <label for="fillCheckbox">fill: </label>
+                    <input type="checkbox" class="toggle" checked="checked" id="fillCheckbox" />
+                </div>
+                
+                <div>
+                    <label for="strockCheckbox">strock: </label>
+                    <input type="checkbox" class="toggle" checked="" id="strockCheckbox" />
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        
+    </div>
+    
+    <canvas id="canvas" style="border: solid 1px black;"></canvas>
+    
+    
+    <script src="https://unpkg.com/swapy/dist/swapy.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/521/fabric.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zingtouch/1.0.6/zingtouch.min.js"></script>
+    
+    <script src="./main.js"></script>
+</body>
+</html>
